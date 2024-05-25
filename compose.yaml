@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+  backend:
+    image: backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:3000"
+
+
+
