@@ -1,5 +1,6 @@
-const userPoolId = window._env_.COGNITO_USER_POOL_ID;
-const clientId = window._env_.COGNITO_CLIENT_ID;
+const userPoolId = process.env.COGNITO_USER_POOL_ID ? process.env.COGNITO_USER_POOL_ID : 'us-east-1_r6EnI7Vpu';
+const clientId = process.env.COGNITO_CLIENT_ID ? process.env.COGNITO_CLIENT_ID : '7hhe2m7apajf08aaghol2d9jm3';
+
 
 localStorage.setItem("aws-congnito-user-pool-id", userPoolId);
 localStorage.setItem("aws-congnito-app-id", clientId);

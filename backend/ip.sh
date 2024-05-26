@@ -10,3 +10,14 @@ VPC_ID=`curl -H "$TOKEN_HEADER" -s $METADATA_URL/network/interfaces/macs/${INTER
 echo "${IP_V4}"
 sed -i "s/<EC2_IP>/${IP_V4}/g" /app/frontend/game.js
 sed -i "s/<EC2_IP>/${IP_V4}/g" /app/frontend/start.js
+
+if [ ! -z "$COGNITO_USER_POOL_ID" ]; then
+  sed -i "s/<COGNITO_USER_POOL_ID>/${COGNITO_USER_POOL_ID}/g" /app/frontend/cognito.js
+fi
+
+if [ ! -z "$COGNITO_CLIENT_ID" ]; then
+ sed -i "s/<COGNITO_CLIENT_ID>/${COGNITO_CLIENT_ID}/g" /app/frontend/cognito.js
+fi
+
+
+
