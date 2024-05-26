@@ -3,15 +3,26 @@ const ws = new WebSocket('ws://localhost:8080');
 
 var nameVal = "";
 
+function updateSignedInUsername(userName) {
+  document.getElementById("signedInUsername").innerText = userName ? `You are logged in as: ${userName}` : "";
+}
+
+function initializePage() {
+  nameVal = localStorage.getItem('loggedInUser');
+  if (nameVal) {
+    updateSignedInUsername(nameVal);
+  }
+}
+
+window.onload = initializePage;
+
 function startGame() {
-  const playerName = document.getElementById("playerName").value;
-  if (playerName) {
-    nameVal = playerName;
+  if (nameVal) {
     document.getElementById("loadingArea").className = "visible";
     sendMessage("window", window.location.href);
-    sendMessage("username", playerName);
+    sendMessage("username", nameVal);
   } else {
-    alert("Please enter your name!");
+    alert("You have to log in first!");
   }
 }
 

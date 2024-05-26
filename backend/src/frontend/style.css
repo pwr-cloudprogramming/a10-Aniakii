@@ -15,11 +15,10 @@ body {
     position: relative;
 }
 
-.top-bar {
+.button-container {
     display: flex;
-    justify-content: flex-end;
-    background-color: aliceblue;
-    padding: 10px;
+    justify-content: center;
+    margin-top: 1px;
 }
 
 .tile {
@@ -132,10 +131,18 @@ p {
     margin-top: 20px;
 }
 
+span {
+    font-size: 1.5em;
+}
+
 .button-container {
     margin-top: 30px;
 }
 
+.spacer {
+    height: 50px;
+    /* Adjust the height as needed */
+}
 
 .hidden {
     display: none;
