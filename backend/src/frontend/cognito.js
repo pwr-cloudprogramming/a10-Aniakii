@@ -1,5 +1,8 @@
-localStorage.setItem("aws-congnito-user-pool-id", "us-east-1_r6EnI7Vpu");
-localStorage.setItem("aws-congnito-app-id", "7hhe2m7apajf08aaghol2d9jm3");
+const userPoolId = process.env.USER_POOL_ID;
+const clientId = process.env.CLIENT_ID;
+
+localStorage.setItem("aws-congnito-user-pool-id", userPoolId);
+localStorage.setItem("aws-congnito-app-id", clientId);
 
 function getPoolData() {
     return {
