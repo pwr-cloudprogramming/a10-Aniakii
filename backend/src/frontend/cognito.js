@@ -1,5 +1,5 @@
-const userPoolId = process.env.USER_POOL_ID;
-const clientId = process.env.CLIENT_ID;
+const userPoolId = window._env_.COGNITO_USER_POOL_ID;
+const clientId = window._env_.COGNITO_CLIENT_ID;
 
 localStorage.setItem("aws-congnito-user-pool-id", userPoolId);
 localStorage.setItem("aws-congnito-app-id", clientId);
@@ -85,36 +85,6 @@ function signOutUser(callback) {
     callback({ name: "Error", message: "User is not signed in" }, null);
 }
 
-function deleteUser(callback) {
-    if (cognitoUser) {
-        cognitoUser.deleteUser((err, result) => {
-            if (err) {
-                callback(err, null);
-                return;
-            }
-            cognitoUser = null;
-            callback(null, result);
-        });
-        return;
-    }
-    callback({ name: "Error", message: "User is not signed in" }, null);
-}
-
-function changeUserPassword(oldPassword, newPassword, callback) {
-    if (cognitoUser) {
-        cognitoUser.changePassword(oldPassword, newPassword, callback);
-        return;
-    }
-    callback({ name: "Error", message: "User is not signed in" }, null);
-}
-
-function sendPasswordResetCode(userName, callback) {
-    getUser(userName).forgotPassword(wrapCallback(callback));
-}
-
-function confirmPasswordReset(userName, code, newPassword, callback) {
-    getUser(userName).confirmPassword(code, newPassword, wrapCallback(callback));
-}
 
 function userAttributes(updateCallback) {
     if (cognitoUser) {
@@ -159,58 +129,5 @@ var user = {
         }
     }
 };
-
-function inputCredentials() {
-    if ((localStorage.getItem("aws-congnito-user-pool-id") !== undefined) &&
-        (localStorage.getItem("aws-congnito-app-id") !== undefined)) {
-        document.getElementById("cognitoUserPoolId").value = localStorage.getItem("aws-congnito-user-pool-id");
-        document.getElementById("applicationId").value = localStorage.getItem("aws-congnito-app-id");
-    }
-    document.getElementById("credentialsModal").style.display = "block";
-}
-
-function saveCredentials() {
-    let userPoolId = document.getElementById("cognitoUserPoolId").value;
-    localStorage.setItem("aws-congnito-user-pool-id", userPoolId);
-    let appId = document.getElementById("applicationId").value;
-    localStorage.setItem("aws-congnito-app-id", appId);
-}
-
-function clearCredentials() {
-    localStorage.removeItem("aws-congnito-user-pool-id");
-    localStorage.removeItem("aws-congnito-app-id");
-    document.getElementById("cognitoUserPoolId").value = "";
-    document.getElementById("applicationId").value = "";
-}
-
-
-
-function createCallback(successMessage, userName = "", email = "", confirmed = "", status = "") {
-    return (err, result) => {
-        if (err) {
-            let message = err.name + ": " + err.message;
-            alert(`Error: ${message}`);
-        } else {
-            user.update({
-                name: userName,
-                email: email,
-                email_verified: confirmed,
-                status: status
-            });
-            let message = "Success: " + successMessage;
-            alert(message);
-
-            if (status === "Signed In") {
-                updateSignedInUsername(userName);
-            } else if (status === "Signed Out") {
-                updateSignedInUsername("");
-            }
-        }
-    };
-}
-
-function updateSignedInUsername(userName) {
-    document.getElementById("signedInUsername").innerText = userName ? `Signed in as: ${userName}` : "";
-}
 
 export { signUpUser, signInUser, signOutUser, confirmUser, deleteUser, changeUserPassword, sendPasswordResetCode, confirmPasswordReset, userAttributes, updateAttributes };
