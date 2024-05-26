@@ -15,6 +15,13 @@ body {
     position: relative;
 }
 
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: aliceblue;
+    padding: 10px;
+}
+
 .tile {
     color: aliceblue;
     font-size: 3em;

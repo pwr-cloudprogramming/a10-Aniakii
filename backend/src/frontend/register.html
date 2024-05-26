@@ -1,4 +1,47 @@
-<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Register</h1>
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="text" id="username" placeholder="Enter your username">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+
+    <div id="modal" style="display:none;">
+        <!-- Treść modal -->
+    </div>
+
+    <script src="cognito.js" type="module"></script>
+    <script src="register.js" type="module"></script>
+
+    <script src="amazon-cognito-identity.min.js"></script>
+    <script src="amazon-cognito-identity.js"></script>
+
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.1.0/amazon-cognito-identity.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.814.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
+
+
+<!-- register.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,4 +65,4 @@
     <script src="register.js" type="module"></script>
 </body>
 
-</html>
+</html> -->

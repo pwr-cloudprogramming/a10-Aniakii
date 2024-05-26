@@ -15,6 +15,106 @@
     <button onclick="goToLogIn()">Login</button>
     <button onclick="goToRegister()">Register</button>
   </div>
+  <!-- 
+  <div class="top-bar">
+    <span id="signedInUsername"></span>
+    <button id="signInButton" onclick="actionSignInUser()">Sign In</button>
+    <button id="signUpButton" onclick="actionAddUser()">Sign Up</button>
+    <button id="signOutButton" onclick="actionSignOutUser()">Sign Out</button>
+    <button id="confirmButton" onclick="actionConfirmUser()">Confirm user</button>
+    <button id="credentialsButton" onclick="inputCredentials()">Credentials</button>
+  </div> -->
+  <!-- 
+  <button onclick="startGame()">Find Game</button>
+
+  <div id="loadingArea" class="hidden">
+    <img id="loading" src="loading.gif">
+  </div> -->
+  <!-- 
+
+  <div class="modal fade" id="credentialsModal" tabindex="-1" role="dialog" aria-labelledby="credentialsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="credentialsModalLabel">Provide IDs for AWS Cognito User Pool and Application</h4>
+        </div>
+        <div class="modal-body">
+          <div role="form">
+            <div class="form-group">
+              <label for="cognitoUserPoolId">User Pool</label>
+              <input type="text" class="form-control" id="cognitoUserPoolId" placeholder="Cognito User Pool ID" />
+            </div>
+            <div class="form-group">
+              <label for="applicationId">Application</label>
+              <input type="text" class="form-control" id="applicationId" placeholder="Application ID" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            onclick="clearCredentials()">Forget</button>
+          <button type="button" class="btn btn-primary btn-right" data-dismiss="modal"
+            onclick="saveCredentials()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="addUserModalLabel">Add a new user to the User Pool</h4>
+        </div>
+        <div class="modal-body">
+          <div role="form">
+            <div class="form-group" id="userNameDiv">
+              <label for="userName">User name</label>
+              <input type="text" class="form-control" id="userName" placeholder="Enter user name">
+            </div>
+            <div class="form-group" id="userEmailDiv">
+              <label for="userEmail">Email address</label>
+              <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group" id="confirmationCode" hidden>
+              <label for="userConfirmationCode">Confirmation code</label>
+              <input type="text" class="form-control" id="userConfirmationCode" placeholder="Enter confirmation code">
+            </div>
+            <div class="form-group" id="userPasswordDiv">
+              <label for="userPassword" id="passwordLabel">Password</label>
+              <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+              <input type="checkbox" class="form-check-input" id="showPasswordCheckbox"
+                onclick="toggleShowPassword('showPasswordCheckbox', 'userPassword')">
+              <label class="form-check-label" for="showPasswordCheckbox">show</label>
+            </div>
+            <div class="form-group" id="userNewPasswordDiv">
+              <label for="newUserPassword">New Password</label>
+              <input type="password" class="form-control" id="newUserPassword" placeholder="Enter password">
+              <input type="checkbox" class="form-check-input" id="showNewPasswordCheckbox"
+                onclick="toggleShowPassword('showNewPasswordCheckbox', 'newUserPassword')">
+              <label class="form-check-label" for="showNewPasswordCheckbox">show</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="modalFormButton" class="btn btn-primary" onclick="modalFormEnter()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
   <script src="index.js"></script>
 </body>
