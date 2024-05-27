@@ -13,4 +13,7 @@ COPY ./src/. .
 RUN ./ip.sh
 RUN npm install
 
+ENV COGNITO_USER_POOL_ID=$COGNITO_USER_POOL_ID
+ENV COGNITO_CLIENT_ID=$COGNITO_CLIENT_ID
+
 CMD ["node", "./server.js"]

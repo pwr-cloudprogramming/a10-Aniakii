@@ -131,4 +131,4 @@ var user = {
     }
 };
 
-export { signUpUser, signInUser, signOutUser, confirmUser, deleteUser, changeUserPassword, sendPasswordResetCode, confirmPasswordReset, userAttributes, updateAttributes };
+export { signUpUser, signInUser, signOutUser, confirmUser, userAttributes, updateAttributes };

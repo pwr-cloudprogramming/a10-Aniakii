@@ -15,4 +15,3 @@ function register() {
     });
 }
 
-window.register = register; 
