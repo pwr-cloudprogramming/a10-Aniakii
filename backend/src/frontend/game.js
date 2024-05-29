@@ -1,5 +1,5 @@
-const ws = new WebSocket('ws://<EC2_IP>:8080');
-// const ws = new WebSocket('ws://localhost:8080');
+// const ws = new WebSocket('ws://<EC2_IP>:8080');
+const ws = new WebSocket('ws://localhost:8080');
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
