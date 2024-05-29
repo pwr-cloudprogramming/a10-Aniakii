@@ -5,14 +5,14 @@ console.log("COGNITO_CLIENT_ID:", "<COGNITO_CLIENT_ID>");
 
 if ("<COGNITO_CLIENT_ID>" === "") {
 
-    localStorage.setItem("aws-congnito-app-id", "7hhe2m7apajf08aaghol2d9jm3");
+    localStorage.setItem("aws-congnito-app-id", "20ep62ed7qa4pvj3me0c1mglmc");
 } else {
     localStorage.setItem("aws-congnito-app-id", "<COGNITO_CLIENT_ID>");
 }
 
 if ("<COGNITO_USER_POOL_ID>" === "") {
 
-    localStorage.setItem("aws-congnito-user-pool-id", "us-east-1_r6EnI7Vpu");
+    localStorage.setItem("aws-congnito-user-pool-id", "us-east-1_965tbkjQz");
 } else {
     localStorage.setItem("aws-congnito-user-pool-id", "<COGNITO_USER_POOL_ID>");
 }
