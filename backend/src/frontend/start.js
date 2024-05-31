@@ -1,14 +1,15 @@
-const ws = new WebSocket('ws://<EC2_IP>:8080');
-// const ws = new WebSocket('ws://localhost:8080');
+const ws = new WebSocket("ws://" + BACKEND_URL + ":8080");
 
 var nameVal = "";
 
 function updateSignedInUsername(userName) {
-  document.getElementById("signedInUsername").innerText = userName ? `You are logged in as: ${userName}` : "";
+  document.getElementById("signedInUsername").innerText = userName
+    ? `You are logged in as: ${userName}`
+    : "";
 }
 
 function initializePage() {
-  nameVal = localStorage.getItem('loggedInUser');
+  nameVal = localStorage.getItem("loggedInUser");
   if (nameVal) {
     updateSignedInUsername(nameVal);
   }
@@ -40,4 +41,3 @@ ws.onmessage = (event) => {
     window.location.href = `/game?player=${nameVal}&game=${message.content}`;
   }
 };
-

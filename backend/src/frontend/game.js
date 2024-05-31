@@ -1,5 +1,4 @@
-const ws = new WebSocket('ws://<EC2_IP>:8080');
-// const ws = new WebSocket('ws://localhost:8080');
+const ws = new WebSocket("ws://" + BACKEND_URL + ":8080");
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -99,7 +98,7 @@ function tileClick(event) {
   ws.send(JSON.stringify(message));
 }
 
-function updateState() { }
+function updateState() {}
 
 function checkWinner() {
   for (const winningCombination of winningCombinations) {

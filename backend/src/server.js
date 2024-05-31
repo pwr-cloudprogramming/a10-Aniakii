@@ -2,7 +2,11 @@ const express = require("express");
 const http = require("http");
 const WebSocket = require("ws");
 const path = require("path");
+const ejs = require("ejs");
 const app = express();
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "frontend"));
+
 const server = http.createServer(app);
 const wss = new WebSocket.Server({
   server,
@@ -88,6 +92,20 @@ function createGame() {
 
 app.get("/game", (req, res) => {
   res.sendFile(path.join(__dirname, "./frontend", "game.html"));
+});
+
+app.get("/config.js", (req, res) => {
+  const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+  const COGNITO_USER_POOL_ID =
+    process.env.COGNITO_USER_POOL_ID || "default_pool_id";
+  const COGNITO_CLIENT_ID =
+    process.env.COGNITO_CLIENT_ID || "default_client_id";
+  res.setHeader("Content-Type", "application/javascript");
+  res.render("config.js.ejs", {
+    BACKEND_URL,
+    COGNITO_USER_POOL_ID,
+    COGNITO_CLIENT_ID,
+  });
 });
 
 const PORT = process.env.PORT || 8080;
