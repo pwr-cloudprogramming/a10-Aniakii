@@ -10,7 +10,7 @@ function register() {
             alert(err.message || JSON.stringify(err));
         } else {
             alert('Registration successful! Please check your email to confirm your account.');
-            window.location.href = 'login.html';
+            window.location.href = 'confirm.html';
         }
     });
 }

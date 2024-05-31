@@ -2,21 +2,24 @@ console.log("COGNITO_USER_POOL_ID:", "<COGNITO_USER_POOL_ID>");
 console.log("COGNITO_CLIENT_ID:", "<COGNITO_CLIENT_ID>");
 
 
+var userPoolId = "<COGNITO_USER_POOL_ID>";
+var clientId = "<COGNITO_CLIENT_ID>";
 
-if ("<COGNITO_CLIENT_ID>" === "") {
+localStorage.setItem("aws-cognito-app-id", "7i23tfej38mn6r366luuc0niqe");
+localStorage.setItem("aws-cognito-user-pool-id", "us-east-1_HMnBl7Kz9");
 
-    localStorage.setItem("aws-congnito-app-id", "20ep62ed7qa4pvj3me0c1mglmc");
-} else {
-    localStorage.setItem("aws-congnito-app-id", "<COGNITO_CLIENT_ID>");
-}
+// if ("<COGNITO_CLIENT_ID>" === "" || "<COGNITO_CLIENT_ID>" === "<COGNITO_CLIENT_ID>") {
+//     localStorage.setItem("aws-cognito-app-id", "20ep62ed7qa4pvj3me0c1mglmc");
+// } else {
+//     localStorage.setItem("aws-cognito-app-id", "<COGNITO_CLIENT_ID>");
+// }
 
-if ("<COGNITO_USER_POOL_ID>" === "") {
-
-    localStorage.setItem("aws-congnito-user-pool-id", "us-east-1_965tbkjQz");
-} else {
-    localStorage.setItem("aws-congnito-user-pool-id", "<COGNITO_USER_POOL_ID>");
-}
-
+// // Sprawdzanie COGNITO_USER_POOL_ID
+// if ("<COGNITO_USER_POOL_ID>" === "" || "<COGNITO_USER_POOL_ID>" === "<COGNITO_USER_POOL_ID>") {
+//     localStorage.setItem("aws-cognito-user-pool-id", "us-east-1_965tbkjQz");
+// } else {
+//     localStorage.setItem("aws-cognito-user-pool-id", "<COGNITO_USER_POOL_ID>");
+// }
 
 
 function getPoolData() {
@@ -45,6 +48,9 @@ function getUser(userName) {
 }
 
 function signUpUser(userName, userEmail, userPassword, callback) {
+
+    console.log(localStorage.getItem("aws-congnito-user-pool-id"));
+    console.log(localStorage.getItem("aws-congnito-app-id"));
     let dataEmail = {
         Name: 'email',
         Value: userEmail
