@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <h1>Tic Tac Toe</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="button-container" id="auth-buttons">
-      <button onclick="goToLogIn()">Login</button>
-      <button onclick="goToRegister()">Register</button>
-      <button onclick="signOutUser()">Sign out</button>
-    </div>
+<body>
+  <h1>Tic Tac Toe</h1>
 
-    <script src="/config.js"></script>
-    <script src="index.js"></script>
-    <script src="cognito.js"></script>
-  </body>
+  <div class="button-container" id="auth-buttons">
+    <button onclick="goToLogIn()">Login</button>
+    <button onclick="goToRegister()">Register</button>
+    <button onclick="logOut()">Sign out</button>
+  </div>
+
+  <script src="/config.js"></script>
+  <script type="module" src="index.js"></script>
+  <script src="cognito.js" type="module"></script>
+
+</body>
+
 </html>
-
