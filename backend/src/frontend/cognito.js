@@ -117,5 +117,4 @@ export {
   signInUser,
   signOutUser,
   confirmUser,
-  deleteUser,
 };
