@@ -97,16 +97,16 @@ function signInUser(userName, password, callback) {
 function signOutUser(callback) {
 
   const loggedInUserName = localStorage.getItem("loggedInUser");
+
   if (loggedInUserName) {
     cognitoUser = getUser(loggedInUserName);
   }
   if (cognitoUser) {
-    if (cognitoUser.signInUserSession) {
-      cognitoUser.signOut();
-      localStorage.removeItem("loggedInUser");
-      callback(null, {});
-      return;
-    }
+    cognitoUser.signOut();
+    localStorage.removeItem("loggedInUser");
+    callback(null, {});
+    return;
+
   }
   callback({ name: "Error", message: "User is not signed in" }, null);
 }
