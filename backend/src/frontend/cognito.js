@@ -1,6 +1,10 @@
 const userPoolId = COGNITO_USER_POOL_ID;
 const clientId = COGNITO_CLIENT_ID;
 
+console.log("USER POOL ID = " + userPoolId);
+console.log("CLIENT ID = " + clientId);
+console.log("USER = " + cognitoUser);
+
 function getPoolData() {
   return {
     UserPoolId: userPoolId,
@@ -99,15 +103,6 @@ function signOutUser(callback) {
   }
 }
 
-function initUserFromLocalStorage() {
-  const loggedInUserName = localStorage.getItem("loggedInUser");
-  if (loggedInUserName) {
-    cognitoUser = getUser(loggedInUserName);
-  }
-}
-
-// Initialize user from local storage when the module is loaded
-initUserFromLocalStorage();
 
 export {
   signUpUser,
